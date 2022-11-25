@@ -25,16 +25,18 @@ namespace PI_2_Biblio.Books
 
         private void btnLogar_Click(object sender, EventArgs e)
         {
+            var result = Hasher.SHA1(txSenhaLogin.Text);
+
             SqlConnection conn;
             SqlCommand comm;
             SqlDataReader reader;
 
-            string connectionString = Properties.Settings.Default.TestDBConnectionString;
+            string connectionString = Properties.Settings.Default.BiblioBooksConnectionString + ";Password=Senha123456!";
 
             conn = new SqlConnection(connectionString);
 
             comm = new SqlCommand(
-                "SELECT UsersTable.password FROM UsersTable WHERE username = @Username", conn
+                "SELECT UsersTable.User_Password FROM UsersTable WHERE User_Name = @Username", conn
                 );
 
             comm.Parameters.Add("@Username", System.Data.SqlDbType.NVarChar);
@@ -60,7 +62,7 @@ namespace PI_2_Biblio.Books
 
                     if (reader.Read())
                     {
-                        if (txSenhaLogin.Text == reader["password"].ToString())
+                        if (result == reader["User_Password"].ToString())
                         {
                             this.Close();
 
@@ -85,7 +87,8 @@ namespace PI_2_Biblio.Books
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
                 }
-            } catch { }
+            }
+            catch { }
             finally
             {
                 conn.Close();

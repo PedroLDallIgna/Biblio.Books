@@ -32,5 +32,15 @@ namespace PI_2_Biblio.Books.Properties {
                 return ((string)(this["TestDBConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost;Initial Catalog=BiblioBooks;User ID=SA")]
+        public string BiblioBooksConnectionString {
+            get {
+                return ((string)(this["BiblioBooksConnectionString"]));
+            }
+        }
     }
 }

@@ -52,6 +52,11 @@
     <Compile Include="AddLivro.Designer.cs">
       <DependentUpon>AddLivro.cs</DependentUpon>
     </Compile>
+    <Compile Include="BiblioBooksDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BiblioBooksDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="CadastroCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +94,7 @@
     <Compile Include="Estoque.Designer.cs">
       <DependentUpon>Estoque.cs</DependentUpon>
     </Compile>
+    <Compile Include="Hasher.cs" />
     <Compile Include="Inicial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +151,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="BiblioBooksDataSet.xsc">
+      <DependentUpon>BiblioBooksDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BiblioBooksDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BiblioBooksDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BiblioBooksDataSet.xss">
+      <DependentUpon>BiblioBooksDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
