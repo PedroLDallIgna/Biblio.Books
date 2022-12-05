@@ -46,8 +46,8 @@
             this.ordersTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ordersTableTableAdapter = new PI_2_Biblio.Books.BiblioBooksDataSetTableAdapters.OrdersTableTableAdapter();
             this.gpFilter = new System.Windows.Forms.GroupBox();
-            this.rdCpf = new System.Windows.Forms.RadioButton();
             this.rdBook = new System.Windows.Forms.RadioButton();
+            this.rdCpf = new System.Windows.Forms.RadioButton();
             this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedidos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.biblioBooksDataSet)).BeginInit();
@@ -62,7 +62,7 @@
             this.dgvPedidos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvPedidos.BackgroundColor = System.Drawing.SystemColors.Menu;
             this.dgvPedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPedidos.Location = new System.Drawing.Point(89, 347);
+            this.dgvPedidos.Location = new System.Drawing.Point(94, 347);
             this.dgvPedidos.Margin = new System.Windows.Forms.Padding(2);
             this.dgvPedidos.Name = "dgvPedidos";
             this.dgvPedidos.ReadOnly = true;
@@ -80,7 +80,7 @@
             this.btnCadastrarPedidos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCadastrarPedidos.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastrarPedidos.ForeColor = System.Drawing.Color.White;
-            this.btnCadastrarPedidos.Location = new System.Drawing.Point(997, 311);
+            this.btnCadastrarPedidos.Location = new System.Drawing.Point(1002, 311);
             this.btnCadastrarPedidos.Margin = new System.Windows.Forms.Padding(2);
             this.btnCadastrarPedidos.Name = "btnCadastrarPedidos";
             this.btnCadastrarPedidos.Size = new System.Drawing.Size(94, 28);
@@ -98,7 +98,7 @@
             this.btnExcluirPedidos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcluirPedidos.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExcluirPedidos.ForeColor = System.Drawing.Color.White;
-            this.btnExcluirPedidos.Location = new System.Drawing.Point(902, 311);
+            this.btnExcluirPedidos.Location = new System.Drawing.Point(907, 311);
             this.btnExcluirPedidos.Margin = new System.Windows.Forms.Padding(2);
             this.btnExcluirPedidos.Name = "btnExcluirPedidos";
             this.btnExcluirPedidos.Size = new System.Drawing.Size(82, 28);
@@ -115,7 +115,7 @@
             this.btnConsultarPedidos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConsultarPedidos.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConsultarPedidos.ForeColor = System.Drawing.Color.White;
-            this.btnConsultarPedidos.Location = new System.Drawing.Point(504, 207);
+            this.btnConsultarPedidos.Location = new System.Drawing.Point(534, 207);
             this.btnConsultarPedidos.Margin = new System.Windows.Forms.Padding(2);
             this.btnConsultarPedidos.Name = "btnConsultarPedidos";
             this.btnConsultarPedidos.Size = new System.Drawing.Size(122, 40);
@@ -130,7 +130,7 @@
             this.lbCPF.AutoSize = true;
             this.lbCPF.BackColor = System.Drawing.Color.Transparent;
             this.lbCPF.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCPF.Location = new System.Drawing.Point(577, 157);
+            this.lbCPF.Location = new System.Drawing.Point(607, 157);
             this.lbCPF.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbCPF.Name = "lbCPF";
             this.lbCPF.Size = new System.Drawing.Size(51, 25);
@@ -144,7 +144,7 @@
             this.txCPF.BackColor = System.Drawing.SystemColors.Menu;
             this.txCPF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txCPF.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txCPF.Location = new System.Drawing.Point(631, 156);
+            this.txCPF.Location = new System.Drawing.Point(661, 156);
             this.txCPF.Margin = new System.Windows.Forms.Padding(2);
             this.txCPF.MaxLength = 11;
             this.txCPF.Name = "txCPF";
@@ -157,7 +157,7 @@
             this.lbNome.AutoSize = true;
             this.lbNome.BackColor = System.Drawing.Color.Transparent;
             this.lbNome.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNome.Location = new System.Drawing.Point(276, 158);
+            this.lbNome.Location = new System.Drawing.Point(306, 158);
             this.lbNome.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbNome.Name = "lbNome";
             this.lbNome.Size = new System.Drawing.Size(65, 25);
@@ -171,7 +171,7 @@
             this.txNomeLivro.BackColor = System.Drawing.SystemColors.Menu;
             this.txNomeLivro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txNomeLivro.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txNomeLivro.Location = new System.Drawing.Point(341, 157);
+            this.txNomeLivro.Location = new System.Drawing.Point(371, 157);
             this.txNomeLivro.Margin = new System.Windows.Forms.Padding(2);
             this.txNomeLivro.Name = "txNomeLivro";
             this.txNomeLivro.Size = new System.Drawing.Size(166, 29);
@@ -183,7 +183,7 @@
             this.lbIDLivro.AutoSize = true;
             this.lbIDLivro.BackColor = System.Drawing.Color.Transparent;
             this.lbIDLivro.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbIDLivro.Location = new System.Drawing.Point(260, 116);
+            this.lbIDLivro.Location = new System.Drawing.Point(290, 116);
             this.lbIDLivro.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbIDLivro.Name = "lbIDLivro";
             this.lbIDLivro.Size = new System.Drawing.Size(81, 25);
@@ -197,7 +197,7 @@
             this.txIDPedido.BackColor = System.Drawing.SystemColors.Menu;
             this.txIDPedido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txIDPedido.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txIDPedido.Location = new System.Drawing.Point(341, 115);
+            this.txIDPedido.Location = new System.Drawing.Point(371, 115);
             this.txIDPedido.Margin = new System.Windows.Forms.Padding(2);
             this.txIDPedido.MaxLength = 10;
             this.txIDPedido.Name = "txIDPedido";
@@ -210,7 +210,7 @@
             this.lbPedidosTitulo.AutoSize = true;
             this.lbPedidosTitulo.BackColor = System.Drawing.Color.Transparent;
             this.lbPedidosTitulo.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPedidosTitulo.Location = new System.Drawing.Point(512, 45);
+            this.lbPedidosTitulo.Location = new System.Drawing.Point(547, 45);
             this.lbPedidosTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbPedidosTitulo.Name = "lbPedidosTitulo";
             this.lbPedidosTitulo.Size = new System.Drawing.Size(92, 26);
@@ -223,7 +223,7 @@
             this.lbNomeCliente.AutoSize = true;
             this.lbNomeCliente.BackColor = System.Drawing.Color.Transparent;
             this.lbNomeCliente.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNomeCliente.Location = new System.Drawing.Point(541, 116);
+            this.lbNomeCliente.Location = new System.Drawing.Point(571, 116);
             this.lbNomeCliente.Margin = new System.Windows.Forms.Padding(0);
             this.lbNomeCliente.Name = "lbNomeCliente";
             this.lbNomeCliente.Size = new System.Drawing.Size(92, 25);
@@ -237,7 +237,7 @@
             this.txNomeCPedidos.BackColor = System.Drawing.SystemColors.Menu;
             this.txNomeCPedidos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txNomeCPedidos.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txNomeCPedidos.Location = new System.Drawing.Point(631, 115);
+            this.txNomeCPedidos.Location = new System.Drawing.Point(661, 115);
             this.txNomeCPedidos.Margin = new System.Windows.Forms.Padding(2);
             this.txNomeCPedidos.MaxLength = 100;
             this.txNomeCPedidos.Name = "txNomeCPedidos";
@@ -260,14 +260,25 @@
             // 
             // gpFilter
             // 
+            this.gpFilter.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.gpFilter.Controls.Add(this.rdBook);
             this.gpFilter.Controls.Add(this.rdCpf);
-            this.gpFilter.Location = new System.Drawing.Point(894, 111);
+            this.gpFilter.Location = new System.Drawing.Point(899, 111);
             this.gpFilter.Name = "gpFilter";
             this.gpFilter.Size = new System.Drawing.Size(200, 100);
             this.gpFilter.TabIndex = 40;
             this.gpFilter.TabStop = false;
             this.gpFilter.Text = "Consultar por";
+            // 
+            // rdBook
+            // 
+            this.rdBook.AutoSize = true;
+            this.rdBook.Location = new System.Drawing.Point(23, 60);
+            this.rdBook.Name = "rdBook";
+            this.rdBook.Size = new System.Drawing.Size(68, 17);
+            this.rdBook.TabIndex = 1;
+            this.rdBook.Text = "Livro (ID)";
+            this.rdBook.UseVisualStyleBackColor = true;
             // 
             // rdCpf
             // 
@@ -281,23 +292,14 @@
             this.rdCpf.Text = "CPF";
             this.rdCpf.UseVisualStyleBackColor = true;
             // 
-            // rdBook
-            // 
-            this.rdBook.AutoSize = true;
-            this.rdBook.Location = new System.Drawing.Point(23, 60);
-            this.rdBook.Name = "rdBook";
-            this.rdBook.Size = new System.Drawing.Size(68, 17);
-            this.rdBook.TabIndex = 1;
-            this.rdBook.Text = "Livro (ID)";
-            this.rdBook.UseVisualStyleBackColor = true;
-            // 
             // button1
             // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.button1.Location = new System.Drawing.Point(90, 304);
+            this.button1.Location = new System.Drawing.Point(95, 304);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(124, 36);

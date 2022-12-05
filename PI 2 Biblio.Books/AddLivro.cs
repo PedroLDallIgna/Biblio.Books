@@ -36,7 +36,7 @@ namespace PI_2_Biblio.Books
             SqlCommand comm;
             bool OperationStatus = true;
 
-            string connectionString = Properties.Settings.Default.BiblioBooksConnectionString + ";Password=Senha123456!";
+            string connectionString = Properties.Settings.Default.BiblioBooksConnectionString;
 
             conn = new SqlConnection(connectionString);
 
@@ -86,7 +86,7 @@ namespace PI_2_Biblio.Books
                 conn.Close();
                 if (OperationStatus == true)
                 {
-                    MessageBox.Show("Cliente Cadastrado com sucesso!",
+                    MessageBox.Show("Livro adicionado com sucesso!",
                         "INSERT",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
