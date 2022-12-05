@@ -36,12 +36,13 @@ namespace PI_2_Biblio.Books
             SqlCommand comm;
             bool OperationStatus = true;
 
-            string connectionString = Properties.Settings.Default.TestDBConnectionString;
+            string connectionString = Properties.Settings.Default.BiblioBooksConnectionString;
 
             conn = new SqlConnection(connectionString);
 
             comm = new SqlCommand(
-                "INSERT INTO Clientes (nome, cpf, phone, address, city) VALUES (@Name, @CPF, @Phone, @Address, @City)", conn);
+                "INSERT INTO ClientsTable (Client_Name, Client_Cpf, Client_Phone, Client_Address, Client_City) VALUES (@Name, @CPF, @Phone, @Address, @City)", 
+                conn);
 
             comm.Parameters.Add("@Name", System.Data.SqlDbType.NVarChar);
             comm.Parameters["@Name"].Value = txNome.Text;

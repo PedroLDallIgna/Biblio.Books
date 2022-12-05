@@ -30,12 +30,12 @@ namespace PI_2_Biblio.Books
             SqlCommand comm;
             SqlDataReader reader;
 
-            string connectionString = Properties.Settings.Default.TestDBConnectionString;
+            string connectionString = Properties.Settings.Default.BiblioBooksConnectionString;
 
             conn = new SqlConnection(connectionString);
 
             comm = new SqlCommand(
-                "SELECT title, autor, editora FROM Livros WHERE id = @Id", conn);
+                "SELECT Book_Name, Book_Author, Book_Publisher FROM BooksTable WHERE Book_ID = @Id", conn);
 
             comm.Parameters.Add("@Id", SqlDbType.Int);
             comm.Parameters["@Id"].Value = Convert.ToInt32(txIDEstoque.Text);
@@ -60,9 +60,9 @@ namespace PI_2_Biblio.Books
 
                     if (reader.Read())
                     {
-                        txAutorEstoque.Text = reader["autor"].ToString();
-                        txTituloEstoque.Text = reader["title"].ToString();
-                        txEditoraEstoque.Text = reader["editora"].ToString();
+                        txAutorEstoque.Text = reader["Book_Author"].ToString();
+                        txTituloEstoque.Text = reader["Book_Name"].ToString();
+                        txEditoraEstoque.Text = reader["Book_Publisher"].ToString();
                     }
                 }
                 catch (Exception er)
@@ -88,12 +88,12 @@ namespace PI_2_Biblio.Books
             SqlCommand comm;
             bool OperationStatus = true;
 
-            string connectionString = Properties.Settings.Default.TestDBConnectionString;
+            string connectionString = Properties.Settings.Default.BiblioBooksConnectionString;
 
             conn = new SqlConnection(connectionString);
 
             comm = new SqlCommand(
-                "DELETE FROM Livros WHERE id = @Id", conn);
+                "DELETE FROM BooksTable WHERE Book_ID = @Id", conn);
 
             comm.Parameters.Add("@Id", SqlDbType.Int);
             comm.Parameters["@Id"].Value = Convert.ToInt32(txIDEstoque.Text);
@@ -144,9 +144,18 @@ namespace PI_2_Biblio.Books
 
         private void btnAlterarEstoque_Click(object sender, EventArgs e)
         {
-            SqlConnection conn = new SqlConnection(Properties.Settings.Default.TestDBConnectionString);
-            SqlCommand comm = new SqlCommand("UPDATE Livros SET title = @Title, autor = @Autor, editora = @Editora WHERE id = @Id", conn);
+            SqlConnection conn;
+            SqlCommand comm;
+            string connectionString;
             bool OperationStatus = true;
+
+            connectionString = Properties.Settings.Default.BiblioBooksConnectionString;
+
+            conn = new SqlConnection(connectionString);
+            
+            comm = new SqlCommand(
+                "UPDATE BooksTable SET Book_Name = @Title, Book_Author = @Autor, Book_Publisher = @Publisher WHERE Book_ID = @Id",
+                conn);
 
             comm.Parameters.Add("@Id", SqlDbType.Int);
             comm.Parameters["@Id"].Value = Convert.ToInt32(txIDEstoque.Text);
@@ -157,8 +166,8 @@ namespace PI_2_Biblio.Books
             comm.Parameters.Add("@Autor", SqlDbType.NVarChar);
             comm.Parameters["@Autor"].Value = txAutorEstoque.Text;
 
-            comm.Parameters.Add("@Editora", SqlDbType.NVarChar);
-            comm.Parameters["@Editora"].Value = txEditoraEstoque.Text;
+            comm.Parameters.Add("@Publisher", SqlDbType.NVarChar);
+            comm.Parameters["@Publisher"].Value = txEditoraEstoque.Text;
 
             try
             {
@@ -204,14 +213,14 @@ namespace PI_2_Biblio.Books
 
         private void Estoque_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'testDBDataSet.Livros' table. You can move, or remove it, as needed.
-            this.livrosTableAdapter.Fill(this.testDBDataSet.Livros);
+            // TODO: This line of code loads data into the 'biblioBooksDataSet.BooksTable' table. You can move, or remove it, as needed.
+            this.booksTableTableAdapter.Fill(this.biblioBooksDataSet.BooksTable);
 
         }
 
         private void UpdateTable()
         {
-            this.livrosTableAdapter.Fill(this.testDBDataSet.Livros);
+            this.booksTableTableAdapter.Fill(this.biblioBooksDataSet.BooksTable);
         }
 
         private void ClearForm()

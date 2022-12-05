@@ -32,6 +32,12 @@
             this.lbNomeCliente = new System.Windows.Forms.Label();
             this.txAutorEstoque = new System.Windows.Forms.TextBox();
             this.dgvPedidos = new System.Windows.Forms.DataGridView();
+            this.bookIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bookNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bookAuthorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bookPublisherDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.booksTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.biblioBooksDataSet = new PI_2_Biblio.Books.BiblioBooksDataSet();
             this.btnAlterarEstoque = new System.Windows.Forms.Button();
             this.btnAddLivro = new System.Windows.Forms.Button();
             this.btnExcluirEstoque = new System.Windows.Forms.Button();
@@ -43,16 +49,10 @@
             this.lbIDLivro = new System.Windows.Forms.Label();
             this.txIDEstoque = new System.Windows.Forms.TextBox();
             this.lbPedidosTitulo = new System.Windows.Forms.Label();
-            this.testDBDataSet = new PI_2_Biblio.Books.TestDBDataSet();
-            this.livrosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.livrosTableAdapter = new PI_2_Biblio.Books.TestDBDataSetTableAdapters.LivrosTableAdapter();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.autorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.editoraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.booksTableTableAdapter = new PI_2_Biblio.Books.BiblioBooksDataSetTableAdapters.BooksTableTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedidos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.testDBDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.livrosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.booksTableBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.biblioBooksDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // lbNomeCliente
@@ -61,7 +61,7 @@
             this.lbNomeCliente.AutoSize = true;
             this.lbNomeCliente.BackColor = System.Drawing.Color.Transparent;
             this.lbNomeCliente.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNomeCliente.Location = new System.Drawing.Point(621, 68);
+            this.lbNomeCliente.Location = new System.Drawing.Point(604, 87);
             this.lbNomeCliente.Margin = new System.Windows.Forms.Padding(0);
             this.lbNomeCliente.Name = "lbNomeCliente";
             this.lbNomeCliente.Size = new System.Drawing.Size(63, 25);
@@ -75,8 +75,8 @@
             this.txAutorEstoque.BackColor = System.Drawing.SystemColors.Menu;
             this.txAutorEstoque.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txAutorEstoque.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txAutorEstoque.Location = new System.Drawing.Point(685, 67);
-            this.txAutorEstoque.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txAutorEstoque.Location = new System.Drawing.Point(668, 86);
+            this.txAutorEstoque.Margin = new System.Windows.Forms.Padding(2);
             this.txAutorEstoque.MaxLength = 100;
             this.txAutorEstoque.Name = "txAutorEstoque";
             this.txAutorEstoque.Size = new System.Drawing.Size(166, 29);
@@ -91,19 +91,57 @@
             this.dgvPedidos.BackgroundColor = System.Drawing.SystemColors.Menu;
             this.dgvPedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPedidos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.titleDataGridViewTextBoxColumn,
-            this.autorDataGridViewTextBoxColumn,
-            this.editoraDataGridViewTextBoxColumn});
-            this.dgvPedidos.DataSource = this.livrosBindingSource;
-            this.dgvPedidos.Location = new System.Drawing.Point(11, 307);
-            this.dgvPedidos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bookIDDataGridViewTextBoxColumn,
+            this.bookNameDataGridViewTextBoxColumn,
+            this.bookAuthorDataGridViewTextBoxColumn,
+            this.bookPublisherDataGridViewTextBoxColumn});
+            this.dgvPedidos.DataSource = this.booksTableBindingSource;
+            this.dgvPedidos.Location = new System.Drawing.Point(130, 338);
+            this.dgvPedidos.Margin = new System.Windows.Forms.Padding(2);
             this.dgvPedidos.Name = "dgvPedidos";
             this.dgvPedidos.ReadOnly = true;
             this.dgvPedidos.RowHeadersWidth = 51;
             this.dgvPedidos.RowTemplate.Height = 24;
-            this.dgvPedidos.Size = new System.Drawing.Size(1025, 322);
+            this.dgvPedidos.Size = new System.Drawing.Size(935, 192);
             this.dgvPedidos.TabIndex = 51;
+            // 
+            // bookIDDataGridViewTextBoxColumn
+            // 
+            this.bookIDDataGridViewTextBoxColumn.DataPropertyName = "Book_ID";
+            this.bookIDDataGridViewTextBoxColumn.HeaderText = "Book_ID";
+            this.bookIDDataGridViewTextBoxColumn.Name = "bookIDDataGridViewTextBoxColumn";
+            this.bookIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // bookNameDataGridViewTextBoxColumn
+            // 
+            this.bookNameDataGridViewTextBoxColumn.DataPropertyName = "Book_Name";
+            this.bookNameDataGridViewTextBoxColumn.HeaderText = "Book_Name";
+            this.bookNameDataGridViewTextBoxColumn.Name = "bookNameDataGridViewTextBoxColumn";
+            this.bookNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // bookAuthorDataGridViewTextBoxColumn
+            // 
+            this.bookAuthorDataGridViewTextBoxColumn.DataPropertyName = "Book_Author";
+            this.bookAuthorDataGridViewTextBoxColumn.HeaderText = "Book_Author";
+            this.bookAuthorDataGridViewTextBoxColumn.Name = "bookAuthorDataGridViewTextBoxColumn";
+            this.bookAuthorDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // bookPublisherDataGridViewTextBoxColumn
+            // 
+            this.bookPublisherDataGridViewTextBoxColumn.DataPropertyName = "Book_Publisher";
+            this.bookPublisherDataGridViewTextBoxColumn.HeaderText = "Book_Publisher";
+            this.bookPublisherDataGridViewTextBoxColumn.Name = "bookPublisherDataGridViewTextBoxColumn";
+            this.bookPublisherDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // booksTableBindingSource
+            // 
+            this.booksTableBindingSource.DataMember = "BooksTable";
+            this.booksTableBindingSource.DataSource = this.biblioBooksDataSet;
+            // 
+            // biblioBooksDataSet
+            // 
+            this.biblioBooksDataSet.DataSetName = "BiblioBooksDataSet";
+            this.biblioBooksDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btnAlterarEstoque
             // 
@@ -114,8 +152,8 @@
             this.btnAlterarEstoque.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAlterarEstoque.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAlterarEstoque.ForeColor = System.Drawing.Color.White;
-            this.btnAlterarEstoque.Location = new System.Drawing.Point(1111, 275);
-            this.btnAlterarEstoque.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAlterarEstoque.Location = new System.Drawing.Point(1015, 294);
+            this.btnAlterarEstoque.Margin = new System.Windows.Forms.Padding(2);
             this.btnAlterarEstoque.Name = "btnAlterarEstoque";
             this.btnAlterarEstoque.Size = new System.Drawing.Size(82, 28);
             this.btnAlterarEstoque.TabIndex = 50;
@@ -132,8 +170,8 @@
             this.btnAddLivro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddLivro.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddLivro.ForeColor = System.Drawing.Color.White;
-            this.btnAddLivro.Location = new System.Drawing.Point(991, 275);
-            this.btnAddLivro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAddLivro.Location = new System.Drawing.Point(895, 294);
+            this.btnAddLivro.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddLivro.Name = "btnAddLivro";
             this.btnAddLivro.Size = new System.Drawing.Size(108, 28);
             this.btnAddLivro.TabIndex = 49;
@@ -150,8 +188,8 @@
             this.btnExcluirEstoque.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcluirEstoque.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExcluirEstoque.ForeColor = System.Drawing.Color.White;
-            this.btnExcluirEstoque.Location = new System.Drawing.Point(897, 275);
-            this.btnExcluirEstoque.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnExcluirEstoque.Location = new System.Drawing.Point(801, 294);
+            this.btnExcluirEstoque.Margin = new System.Windows.Forms.Padding(2);
             this.btnExcluirEstoque.Name = "btnExcluirEstoque";
             this.btnExcluirEstoque.Size = new System.Drawing.Size(82, 28);
             this.btnExcluirEstoque.TabIndex = 48;
@@ -168,8 +206,8 @@
             this.btnConsultarEstoque.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConsultarEstoque.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConsultarEstoque.ForeColor = System.Drawing.Color.White;
-            this.btnConsultarEstoque.Location = new System.Drawing.Point(558, 159);
-            this.btnConsultarEstoque.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnConsultarEstoque.Location = new System.Drawing.Point(541, 178);
+            this.btnConsultarEstoque.Margin = new System.Windows.Forms.Padding(2);
             this.btnConsultarEstoque.Name = "btnConsultarEstoque";
             this.btnConsultarEstoque.Size = new System.Drawing.Size(122, 40);
             this.btnConsultarEstoque.TabIndex = 47;
@@ -183,7 +221,7 @@
             this.lbCPF.AutoSize = true;
             this.lbCPF.BackColor = System.Drawing.Color.Transparent;
             this.lbCPF.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCPF.Location = new System.Drawing.Point(608, 110);
+            this.lbCPF.Location = new System.Drawing.Point(591, 129);
             this.lbCPF.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbCPF.Name = "lbCPF";
             this.lbCPF.Size = new System.Drawing.Size(76, 25);
@@ -197,8 +235,8 @@
             this.txEditoraEstoque.BackColor = System.Drawing.SystemColors.Menu;
             this.txEditoraEstoque.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txEditoraEstoque.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txEditoraEstoque.Location = new System.Drawing.Point(685, 108);
-            this.txEditoraEstoque.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txEditoraEstoque.Location = new System.Drawing.Point(668, 127);
+            this.txEditoraEstoque.Margin = new System.Windows.Forms.Padding(2);
             this.txEditoraEstoque.MaxLength = 11;
             this.txEditoraEstoque.Name = "txEditoraEstoque";
             this.txEditoraEstoque.Size = new System.Drawing.Size(166, 29);
@@ -210,7 +248,7 @@
             this.lbNome.AutoSize = true;
             this.lbNome.BackColor = System.Drawing.Color.Transparent;
             this.lbNome.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNome.Location = new System.Drawing.Point(330, 110);
+            this.lbNome.Location = new System.Drawing.Point(313, 129);
             this.lbNome.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbNome.Name = "lbNome";
             this.lbNome.Size = new System.Drawing.Size(65, 25);
@@ -224,8 +262,8 @@
             this.txTituloEstoque.BackColor = System.Drawing.SystemColors.Menu;
             this.txTituloEstoque.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txTituloEstoque.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txTituloEstoque.Location = new System.Drawing.Point(395, 109);
-            this.txTituloEstoque.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txTituloEstoque.Location = new System.Drawing.Point(378, 128);
+            this.txTituloEstoque.Margin = new System.Windows.Forms.Padding(2);
             this.txTituloEstoque.Name = "txTituloEstoque";
             this.txTituloEstoque.Size = new System.Drawing.Size(166, 29);
             this.txTituloEstoque.TabIndex = 43;
@@ -236,7 +274,7 @@
             this.lbIDLivro.AutoSize = true;
             this.lbIDLivro.BackColor = System.Drawing.Color.Transparent;
             this.lbIDLivro.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbIDLivro.Location = new System.Drawing.Point(314, 68);
+            this.lbIDLivro.Location = new System.Drawing.Point(297, 87);
             this.lbIDLivro.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbIDLivro.Name = "lbIDLivro";
             this.lbIDLivro.Size = new System.Drawing.Size(81, 25);
@@ -250,8 +288,8 @@
             this.txIDEstoque.BackColor = System.Drawing.SystemColors.Menu;
             this.txIDEstoque.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txIDEstoque.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txIDEstoque.Location = new System.Drawing.Point(395, 67);
-            this.txIDEstoque.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txIDEstoque.Location = new System.Drawing.Point(378, 86);
+            this.txIDEstoque.Margin = new System.Windows.Forms.Padding(2);
             this.txIDEstoque.MaxLength = 10;
             this.txIDEstoque.Name = "txIDEstoque";
             this.txIDEstoque.Size = new System.Drawing.Size(166, 29);
@@ -263,61 +301,23 @@
             this.lbPedidosTitulo.AutoSize = true;
             this.lbPedidosTitulo.BackColor = System.Drawing.Color.Transparent;
             this.lbPedidosTitulo.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPedidosTitulo.Location = new System.Drawing.Point(566, 9);
+            this.lbPedidosTitulo.Location = new System.Drawing.Point(549, 28);
             this.lbPedidosTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbPedidosTitulo.Name = "lbPedidosTitulo";
             this.lbPedidosTitulo.Size = new System.Drawing.Size(94, 26);
             this.lbPedidosTitulo.TabIndex = 40;
             this.lbPedidosTitulo.Text = "Estoque";
             // 
-            // testDBDataSet
+            // booksTableTableAdapter
             // 
-            this.testDBDataSet.DataSetName = "TestDBDataSet";
-            this.testDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // livrosBindingSource
-            // 
-            this.livrosBindingSource.DataMember = "Livros";
-            this.livrosBindingSource.DataSource = this.testDBDataSet;
-            // 
-            // livrosTableAdapter
-            // 
-            this.livrosTableAdapter.ClearBeforeFill = true;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // titleDataGridViewTextBoxColumn
-            // 
-            this.titleDataGridViewTextBoxColumn.DataPropertyName = "title";
-            this.titleDataGridViewTextBoxColumn.HeaderText = "title";
-            this.titleDataGridViewTextBoxColumn.Name = "titleDataGridViewTextBoxColumn";
-            this.titleDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // autorDataGridViewTextBoxColumn
-            // 
-            this.autorDataGridViewTextBoxColumn.DataPropertyName = "autor";
-            this.autorDataGridViewTextBoxColumn.HeaderText = "autor";
-            this.autorDataGridViewTextBoxColumn.Name = "autorDataGridViewTextBoxColumn";
-            this.autorDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // editoraDataGridViewTextBoxColumn
-            // 
-            this.editoraDataGridViewTextBoxColumn.DataPropertyName = "editora";
-            this.editoraDataGridViewTextBoxColumn.HeaderText = "editora";
-            this.editoraDataGridViewTextBoxColumn.Name = "editoraDataGridViewTextBoxColumn";
-            this.editoraDataGridViewTextBoxColumn.ReadOnly = true;
+            this.booksTableTableAdapter.ClearBeforeFill = true;
             // 
             // Estoque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1040, 640);
+            this.ClientSize = new System.Drawing.Size(1166, 576);
             this.Controls.Add(this.lbNomeCliente);
             this.Controls.Add(this.txAutorEstoque);
             this.Controls.Add(this.dgvPedidos);
@@ -333,15 +333,15 @@
             this.Controls.Add(this.txIDEstoque);
             this.Controls.Add(this.lbPedidosTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Estoque";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Estoque";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Estoque_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedidos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.testDBDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.livrosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.booksTableBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.biblioBooksDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -363,12 +363,12 @@
         private System.Windows.Forms.Label lbIDLivro;
         private System.Windows.Forms.TextBox txIDEstoque;
         private System.Windows.Forms.Label lbPedidosTitulo;
-        private TestDBDataSet testDBDataSet;
-        private System.Windows.Forms.BindingSource livrosBindingSource;
-        private TestDBDataSetTableAdapters.LivrosTableAdapter livrosTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn titleDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn autorDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn editoraDataGridViewTextBoxColumn;
+        private BiblioBooksDataSet biblioBooksDataSet;
+        private System.Windows.Forms.BindingSource booksTableBindingSource;
+        private BiblioBooksDataSetTableAdapters.BooksTableTableAdapter booksTableTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bookIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bookNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bookAuthorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bookPublisherDataGridViewTextBoxColumn;
     }
 }

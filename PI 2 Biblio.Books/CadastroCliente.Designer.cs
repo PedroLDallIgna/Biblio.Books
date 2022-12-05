@@ -56,7 +56,7 @@
             this.btnCadastrarCliente.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastrarCliente.ForeColor = System.Drawing.Color.White;
             this.btnCadastrarCliente.Location = new System.Drawing.Point(132, 449);
-            this.btnCadastrarCliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCadastrarCliente.Margin = new System.Windows.Forms.Padding(2);
             this.btnCadastrarCliente.Name = "btnCadastrarCliente";
             this.btnCadastrarCliente.Size = new System.Drawing.Size(137, 40);
             this.btnCadastrarCliente.TabIndex = 20;
@@ -74,7 +74,7 @@
             this.btnCancelarCad.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelarCad.ForeColor = System.Drawing.Color.White;
             this.btnCancelarCad.Location = new System.Drawing.Point(332, 449);
-            this.btnCancelarCad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancelarCad.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelarCad.Name = "btnCancelarCad";
             this.btnCancelarCad.Size = new System.Drawing.Size(137, 40);
             this.btnCancelarCad.TabIndex = 21;
@@ -103,11 +103,12 @@
             this.txTelefone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txTelefone.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txTelefone.Location = new System.Drawing.Point(132, 254);
-            this.txTelefone.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txTelefone.Mask = "(99) 99999-9999";
+            this.txTelefone.Margin = new System.Windows.Forms.Padding(2);
+            this.txTelefone.Mask = "(99)99999-9999";
             this.txTelefone.Name = "txTelefone";
             this.txTelefone.Size = new System.Drawing.Size(166, 29);
             this.txTelefone.TabIndex = 34;
+            this.txTelefone.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // txEndereco
             // 
@@ -116,7 +117,7 @@
             this.txEndereco.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txEndereco.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txEndereco.Location = new System.Drawing.Point(132, 294);
-            this.txEndereco.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txEndereco.Margin = new System.Windows.Forms.Padding(2);
             this.txEndereco.Name = "txEndereco";
             this.txEndereco.Size = new System.Drawing.Size(348, 29);
             this.txEndereco.TabIndex = 32;
@@ -156,7 +157,7 @@
             this.txCPF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txCPF.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txCPF.Location = new System.Drawing.Point(132, 214);
-            this.txCPF.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txCPF.Margin = new System.Windows.Forms.Padding(2);
             this.txCPF.MaxLength = 11;
             this.txCPF.Name = "txCPF";
             this.txCPF.Size = new System.Drawing.Size(166, 29);
@@ -183,7 +184,7 @@
             this.txNome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txNome.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txNome.Location = new System.Drawing.Point(132, 175);
-            this.txNome.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txNome.Margin = new System.Windows.Forms.Padding(2);
             this.txNome.Name = "txNome";
             this.txNome.Size = new System.Drawing.Size(166, 29);
             this.txNome.TabIndex = 27;
@@ -209,7 +210,7 @@
             this.txID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txID.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txID.Location = new System.Drawing.Point(132, 135);
-            this.txID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txID.Margin = new System.Windows.Forms.Padding(2);
             this.txID.MaxLength = 6;
             this.txID.Name = "txID";
             this.txID.Size = new System.Drawing.Size(166, 29);
@@ -240,7 +241,7 @@
             "teste",
             "teste"});
             this.cbCidades.Location = new System.Drawing.Point(132, 335);
-            this.cbCidades.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbCidades.Margin = new System.Windows.Forms.Padding(2);
             this.cbCidades.Name = "cbCidades";
             this.cbCidades.Size = new System.Drawing.Size(166, 28);
             this.cbCidades.TabIndex = 36;
@@ -281,7 +282,7 @@
             this.Controls.Add(this.btnCadastrarCliente);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CadastroCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CadastroCliente";

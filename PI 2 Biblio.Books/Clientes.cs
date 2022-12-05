@@ -19,11 +19,6 @@ namespace PI_2_Biblio.Books
             InitializeComponent();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnCadastrarClientes_Click(object sender, EventArgs e)
         {
             CadastroCliente cadCliente = new CadastroCliente();
@@ -34,13 +29,13 @@ namespace PI_2_Biblio.Books
 
         private void Clientes_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'testDBDataSet.Clientes' table. You can move, or remove it, as needed.
-            this.clientesTableAdapter.Fill(this.testDBDataSet.Clientes);
+            // TODO: This line of code loads data into the 'biblioBooksDataSet.ClientsTable' table. You can move, or remove it, as needed.
+            this.clientsTableTableAdapter.Fill(this.biblioBooksDataSet.ClientsTable);
         }
 
         private void UpdateTable()
         {
-            this.clientesTableAdapter.Fill(this.testDBDataSet.Clientes);
+            this.clientsTableTableAdapter.Fill(this.biblioBooksDataSet.ClientsTable);
         }
 
         private void ClearForm()
@@ -59,12 +54,13 @@ namespace PI_2_Biblio.Books
             SqlCommand comm;
             SqlDataReader reader;
 
-            string connectionString = Properties.Settings.Default.TestDBConnectionString;
+            string connectionString = Properties.Settings.Default.BiblioBooksConnectionString;
             
             conn = new SqlConnection(connectionString);
 
             comm = new SqlCommand(
-                "SELECT nome, cpf, phone, address, city FROM Clientes WHERE id = @Id", conn);
+                "SELECT Client_Name, Client_Cpf, Client_Phone, Client_Address, Client_City FROM ClientsTabel WHERE Client_ID = @Id", 
+                conn);
 
             comm.Parameters.Add("@ID", SqlDbType.Int);
             comm.Parameters["@Id"].Value = Convert.ToInt32(txID.Text);
@@ -89,11 +85,11 @@ namespace PI_2_Biblio.Books
 
                     if (reader.Read())
                     {
-                        txNome.Text = reader["nome"].ToString();
-                        txCPF.Text = reader["cpf"].ToString();
-                        txEndereco.Text = reader["address"].ToString();
-                        mtxTelefone.Text = reader["phone"].ToString();
-                        cbCidades.Text = reader["city"].ToString();
+                        txNome.Text = reader["Client_Name"].ToString();
+                        txCPF.Text = reader["Client_Cpf"].ToString();
+                        txEndereco.Text = reader["Client_Address"].ToString();
+                        mtxTelefone.Text = reader["Client_Phone"].ToString();
+                        cbCidades.Text = reader["Client_City"].ToString();
                     }
                 }
                 catch (Exception er)
@@ -118,12 +114,13 @@ namespace PI_2_Biblio.Books
             SqlConnection conn;
             SqlCommand comm;
 
-            string connectionString = Properties.Settings.Default.TestDBConnectionString;
+            string connectionString = Properties.Settings.Default.BiblioBooksConnectionString;
 
             conn = new SqlConnection(connectionString);
 
             comm = new SqlCommand(
-                "DELETE FROM Clientes WHERE id = @Id", conn );
+                "DELETE FROM ClientsTable WHERE Client_ID = @Id", conn );
+
             comm.Parameters.Add("@Id", SqlDbType.Int);
             comm.Parameters["@Id"].Value = Convert.ToInt32(txID.Text);
 
@@ -174,21 +171,22 @@ namespace PI_2_Biblio.Books
             ClearForm();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnAlterarCliente_Click(object sender, EventArgs e)
         {
             SqlConnection conn;
             SqlCommand comm;
             bool OperationStatus = true;
 
-            string connectionString = Properties.Settings.Default.TestDBConnectionString;
+            string connectionString = Properties.Settings.Default.BiblioBooksConnectionString;
 
             conn = new SqlConnection(connectionString);
 
             comm = new SqlCommand(
-                "UPDATE Clientes SET nome=@Nome, cpf=@Cpf, phone=@Phone, address=@Address, city=@City WHERE id=@ID", conn);
+                "UPDATE ClientsTable SET Client_Name = @Nome, Client_Cpf = @Cpf, Client_Phone = @Phone, Client_Address = @Address, Client_City = @City WHERE Client_ID = @id",
+                conn);
 
-            comm.Parameters.Add("@Id", SqlDbType.Int);
-            comm.Parameters["@Id"].Value = Convert.ToInt32(txID.Text);
+            comm.Parameters.Add("@id", SqlDbType.Int);
+            comm.Parameters["@id"].Value = Convert.ToInt32(txID.Text);
 
             comm.Parameters.Add("@Nome", SqlDbType.NVarChar);
             comm.Parameters["@Nome"].Value = txNome.Text;

@@ -26,17 +26,8 @@ namespace PI_2_Biblio.Books.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost;Initial Catalog=TestDB;User ID=sa;Password=igna2307")]
-        public string TestDBConnectionString {
-            get {
-                return ((string)(this["TestDBConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost;Initial Catalog=BiblioBooks;User ID=SA")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost;Initial Catalog=BiblioBooks;User ID=SA;Password=Senha123456" +
+            "!")]
         public string BiblioBooksConnectionString {
             get {
                 return ((string)(this["BiblioBooksConnectionString"]));

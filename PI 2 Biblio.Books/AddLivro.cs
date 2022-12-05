@@ -36,21 +36,21 @@ namespace PI_2_Biblio.Books
             SqlCommand comm;
             bool OperationStatus = true;
 
-            string connectionString = Properties.Settings.Default.TestDBConnectionString;
+            string connectionString = Properties.Settings.Default.BiblioBooksConnectionString + ";Password=Senha123456!";
 
             conn = new SqlConnection(connectionString);
 
             comm = new SqlCommand(
-                "INSERT INTO Livros (title, autor, editora) VALUES (@Title, @Author, @Editora)", conn);
+                "INSERT INTO BooksTable (Book_Name, Book_Author, Book_Publisher) VALUES (@Name, @Author, @Publisher)", conn);
 
-            comm.Parameters.Add("@Title", System.Data.SqlDbType.NVarChar);
-            comm.Parameters["@Title"].Value = txTituloEstoque.Text;
+            comm.Parameters.Add("@Name", System.Data.SqlDbType.NVarChar);
+            comm.Parameters["@Name"].Value = txTituloEstoque.Text;
 
             comm.Parameters.Add("@Author", System.Data.SqlDbType.NVarChar);
             comm.Parameters["@Author"].Value = txAutorEstoque.Text;
 
-            comm.Parameters.Add("@Editora", System.Data.SqlDbType.NVarChar);
-            comm.Parameters["@Editora"].Value = txEditoraEstoque.Text;
+            comm.Parameters.Add("@Publisher", System.Data.SqlDbType.NVarChar);
+            comm.Parameters["@Publisher"].Value = txEditoraEstoque.Text;
 
             try
             {

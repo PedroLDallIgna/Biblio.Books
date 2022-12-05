@@ -31,7 +31,7 @@ namespace PI_2_Biblio.Books
             SqlCommand comm;
             SqlDataReader reader;
 
-            string connectionString = Properties.Settings.Default.BiblioBooksConnectionString + ";Password=Senha123456!";
+            string connectionString = Properties.Settings.Default.BiblioBooksConnectionString;
 
             conn = new SqlConnection(connectionString);
 
